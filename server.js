@@ -9,6 +9,10 @@ const signin = require('./controllers/signin');
 const profile = require('./controllers/profile');
 const image = require('./controllers/image');
 	
+//not secure fir use in production, but it is only for local production and sample project
+// due to free version of heroku we use
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0;
+
 const db = knex ({
   client: 'pg',
   connection: {
